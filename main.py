@@ -1,7 +1,7 @@
 import os
 import dotenv
 from datetime import date
-from crew import define_blog_topic
+from crew import define_pipeline
 from trends import fetch_todays_trends
 
 
@@ -19,7 +19,7 @@ def write_trends_articles(trends):
 def create_post(item):
     trend, relatedTopics = item['trend'], item['relatedTopics']
     print(f"Item: {trend}")
-    crew = define_blog_topic(trend, relatedTopics, local=True)
+    crew = define_pipeline(trend, relatedTopics, local=True)
     result = crew.kickoff()
     write_to_file(trend, result)
 
