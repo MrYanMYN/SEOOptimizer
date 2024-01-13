@@ -7,9 +7,26 @@ import PIL.Image
 import tensorflow as tf
 import huggingface_hub
 from clip_interrogator import Config, Interrogator
-
 import dotenv
 
+"""
+Base Classes
+"""
+from langchain.pydantic_v1 import BaseModel, Field
+from langchain.tools import BaseTool, StructuredTool, tool
+
+
+class GPTVInput(BaseModel):
+    prompt: str = Field(description="a prompt that asks a question about the given image")
+    image_path: str = Field(description="local image path")
+
+
+class DeepDanInput(BaseModel):
+    image_path: str = Field(description="local image path")
+
+
+class ClipInterrogatorInput(BaseModel):
+    image_path: str = Field(description="local image path")
 
 class VisionTools:
     def __init__(self, is_deepdan):
@@ -40,15 +57,9 @@ class VisionTools:
             image_file.close()
         return encoded_image
 
-    @tool("Send an image and a prompt for analysis about said prompt")
+    @tool('image_question_answerer', args_schema=DeepDanInput, return_direct=True)
     def gpt_v_predict(self, prompt: str, image_path: str) -> str:
-        """Given a prompt and an image , the model returns an answer about a visual aspect of the image
-        Args:
-            image_path: path to local image
-            prompt: a prompt that asks a question about the given image
-        Returns:
-           an answer to the given image / prompt pair
-        """
+        """Given a prompt and an image , the model returns an answer about a visual aspect of the image."""
         client = OpenAI()
         base64_image = self.encode_image(image_path)
 
@@ -74,29 +85,20 @@ class VisionTools:
         answer = response.choices[0].message.content
         return answer
 
-    @tool("get a description of what you see in the image")
+    @tool('image_contents_describer', args_schema=ClipInterrogatorInput, return_direct=True)
     def clip_interrogator_predict(self, image_path: str) -> str:
         """
-        Runs the clip model to receive a description of what is seen in the given image
-        Args:
-            image_path: path to local image
-        Returns:
-            a description of what is visually seen in the image
+        Runs the clip model to receive a description of what is seen in the given image.
         """
         image = PIL.Image.open(image_path).convert('RGB')
         ci = Interrogator(Config(clip_model_name="ViT-L-14/openai"))
         return ci.interrogate(image)
 
-    @tool("get tags of objects and traits that are found in the given image")
+    @tool('image_tag_analyzer', args_schema=DeepDanInput, return_direct=True)
     def deepdan_predict(
             self, image_path: str, score_threshold: float = 0.8
     ) -> str:
-        """Given a prompt and an image , the model returns an answer about a visual aspect of the image
-                Args:
-                    image_path: path to local image
-                    score_threshold: score threshold for model detection - 0.8 default
-                Returns:
-                    an answer to the given image / prompt pair
+        """Given a prompt and an image , the model returns an answer about a visual aspect of the image.
         """
         _, height, width, _ = self.dd_model.input_shape
         image = PIL.Image.open(image_path).convert('RGB')

@@ -1,5 +1,12 @@
 from pytrends.request import TrendReq
 
+def get_related_queries(trend: str):
+    pytrend = TrendReq()
+    kw_list = [trend]
+    pytrend.build_payload(kw_list, cat=0, timeframe='today 5-y', geo='', gprop='')
+    related_queries = pytrend.related_queries()
+    return related_queries
+
 def fetch_todays_trends(region):
     pytrend = TrendReq()
     df = pytrend.trending_searches(pn=region)
@@ -22,3 +29,6 @@ def fetch_todays_trends(region):
         df = tmp_df
 
     return trends
+
+# print(get_related_queries("Crypto"))
+# # print(fetch_todays_trends('united_states'))

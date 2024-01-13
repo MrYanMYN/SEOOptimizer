@@ -19,7 +19,7 @@ def write_trends_articles(trends):
 def create_post(item):
     trend, relatedTopics = item['trend'], item['relatedTopics']
     print(f"Item: {trend}")
-    crew = define_pipeline(trend, relatedTopics, local=True)
+    crew = define_pipeline(trend, relatedTopics, local=False)
     result = crew.kickoff()
     write_to_file(trend, result)
 

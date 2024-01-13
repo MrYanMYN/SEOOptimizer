@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c8fd9df-09b5-4955-aba7-0581bc8281e4" name="Changes" comment="Inital SEO Optimaizer">
+    <list default="true" id="1c8fd9df-09b5-4955-aba7-0581bc8281e4" name="Changes" comment="Created vision_tools library">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crew.py" beforeDir="false" afterPath="$PROJECT_DIR$/crew.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/vision_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/vision_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trends.py" beforeDir="false" afterPath="$PROJECT_DIR$/trends.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MrYanMYN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b843d210-0c42-4ba3-8c34-38f1e6bc0249" />
+        <option name="url" value="https://github.com/MrYanMYN/SEOOptimizer" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -38,12 +59,21 @@
   &quot;keyToString&quot;: {
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.trends.executor&quot;: &quot;Run&quot;,
+    &quot;Python.vision_tools.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/0910m/Documents/ChatDev&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/0910m/PycharmProjects/neuraline&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\0910m\PycharmProjects\neuraline" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\0910m\PycharmProjects\neuraline\tools" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="neuraline" />
@@ -89,9 +119,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="vision_tools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="neuraline" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/vision_tools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.trends" />
+        <item itemvalue="Python.vision_tools" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +172,31 @@
       <option name="project" value="LOCAL" />
       <updated>1704924698520</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Reorganized code">
+      <option name="closed" value="true" />
+      <created>1705116004540</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705116004540</updated>
+    </task>
+    <task id="LOCAL-00003" summary="TODO Implement GPT-V as a Langchain tool">
+      <option name="closed" value="true" />
+      <created>1705117048084</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705117048084</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Created vision_tools library">
+      <option name="closed" value="true" />
+      <created>1705162713577</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705162713577</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +212,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inital SEO Optimaizer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inital SEO Optimaizer" />
+    <MESSAGE value="Reorganized code" />
+    <MESSAGE value="TODO Implement GPT-V as a Langchain tool" />
+    <MESSAGE value="Created vision_tools library" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created vision_tools library" />
   </component>
 </project>

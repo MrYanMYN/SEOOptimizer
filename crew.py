@@ -73,7 +73,7 @@ class Agents():
             self.base_url = "https://api.openai.com/v1"
 
     def get_agents(self):
-        return self.researcher, self.seo_expert, self.writer
+        return self.researcher(), self.seo_expert(), self.writer()
 
     def seo_expert(self):
         return Agent(
