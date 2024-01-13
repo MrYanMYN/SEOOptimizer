@@ -1,8 +1,6 @@
 from crewai import Agent, Task, Crew, Process
 from langchain.chat_models import ChatOpenAI
-
-from langchain.tools import DuckDuckGoSearchRun
-from langchain.agents import Tool
+from tools import search_tool
 
 # Define your agents with roles and goals
 def define_blog_topic(topic, supporting_tags, local=False):
@@ -59,7 +57,6 @@ def define_tasks(researcher, seoExpert, topic, writer):
 
 
 def define_agents(base_url, supporting_tags, topic):
-    search_tool = DuckDuckGoSearchRun()
     seoExpert = Agent(
         role='SEO Expert',
         goal=f'Research keywords and questions to optimize SEO for {topic} which is probably based on {supporting_tags}',
